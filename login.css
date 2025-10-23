@@ -1,0 +1,226 @@
+ body {
+      margin: 0;
+      font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #181818 0%, #232526 100%);
+      color: #fff;
+      min-height: 100vh;
+    }
+    header {
+      padding: 24px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(20,20,20,0.6);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #222;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 16px #0003;
+    }
+    .logo {
+      font-size: 2.2em;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: #e0b973;
+      text-shadow: 0 2px 8px #0008;
+      transition: color 0.2s;
+    }
+    .logo:hover {
+      color: #fff2cc;
+    }
+    nav a {
+      margin: 0 18px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.2s;
+      position: relative;
+      padding: 4px 0;
+    }
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #e0b973 60%, #fff2cc 100%);
+      transition: width .3s;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      border-radius: 2px;
+    }
+    nav a:hover,
+    nav a.active {
+      color: #e0b973;
+    }
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+    .login-section {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 0;
+    }
+    .login-box {
+      background: rgba(30,30,30,0.85);
+      border-radius: 18px;
+      padding: 40px 32px 32px 32px;
+      box-shadow: 0 8px 32px #0007;
+      border: 2px solid #e0b97344;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      animation: fadeInUp 1.2s cubic-bezier(.23,1.02,.32,1) both;
+    }
+    .login-box h2 {
+      color: #e0b973;
+      margin-bottom: 24px;
+      font-size: 2em;
+      letter-spacing: 1px;
+    }
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .login-form label {
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #fff2cc;
+      text-align: left;
+    }
+    .login-form input {
+      padding: 12px;
+      border-radius: 7px;
+      border: 1.5px solid #e0b97355;
+      background: #232323;
+      color: #fff;
+      font-size: 1em;
+      font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .login-form input:focus {
+      border-color: #e0b973;
+      outline: none;
+    }
+    .login-form button {
+      background: linear-gradient(90deg, #e0b973 60%, #fff2cc 100%);
+      color: #181818;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 36px;
+      font-size: 1.1em;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 12px #0004;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      margin-top: 8px;
+    }
+    .login-form button:hover {
+      background: linear-gradient(90deg, #fff2cc 0%, #e0b973 100%);
+      color: #000;
+      transform: translateY(-2px) scale(1.04);
+    }
+    .login-links {
+      margin-top: 18px;
+      font-size: 1em;
+    }
+    .login-links a {
+      color: #e0b973;
+      text-decoration: none;
+      margin: 0 8px;
+      transition: color 0.2s;
+    }
+    .login-links a:hover {
+      color: #fff2cc;
+    }
+    footer {
+      background: #181818;
+      color: #ccc;
+      padding: 36px 0 18px 0;
+      text-align: center;
+      font-size: 1.1em;
+      letter-spacing: 1px;
+      margin-top: 40px;
+      border-top: 1px solid #232323;
+      position: relative;
+    }
+    .footer-social {
+      margin-bottom: 18px;
+    }
+    .footer-social a {
+      display: inline-block;
+      margin: 0 12px;
+      color: #e0b973;
+      font-size: 1.7em;
+      transition: color 0.2s, transform 0.2s;
+      vertical-align: middle;
+    }
+    .footer-social a:hover {
+      color: #fff2cc;
+      transform: scale(1.2) rotate(-8deg);
+    }
+    .footer-links {
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      color: #ccc;
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: #e0b973;
+    }
+    .footer-copy {
+      color: #888;
+      font-size: 0.98em;
+      margin-top: 8px;
+      letter-spacing: 1px;
+    }
+
+@media (max-width: 1100px) {
+  header {
+    padding: 18px 3%;
+  }
+  .login-box {
+    max-width: 95vw;
+    padding: 32px 10px 24px 10px;
+  }
+}
+
+@media (max-width: 700px) {
+    header { flex-direction: column; gap: 10px; }
+  .login-box {
+    padding: 18px 6px;
+  }
+  .footer-social a {
+    font-size: 1.3em;
+    margin: 0 7px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 2%;
+  }
+  nav a {
+    margin: 0 8px;
+    font-size: 1em;
+  }
+  .login-box {
+    padding: 16px 2px;
+    font-size: 0.98em;
+  }
+  .footer-links {
+    font-size: 0.98em;
+  }
+}
